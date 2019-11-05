@@ -33,6 +33,9 @@ namespace XFConvUITest.Views
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
+                    case (int)MenuItemType.Chat:
+                        MenuPages.Add(id, new NavigationPage(new ChatPage()));
+                        break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;

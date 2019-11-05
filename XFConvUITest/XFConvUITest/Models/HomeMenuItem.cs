@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace XFConvUITest.Models
+﻿namespace XFConvUITest.Models
 {
     public enum MenuItemType
     {
         Browse,
+        Chat,
         About
     }
     public class HomeMenuItem
