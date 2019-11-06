@@ -24,18 +24,18 @@ namespace XFConvUITest.ViewModels
         private void GenData()
         {
             Items = new ObservableCollection<SimpleChatItem>();
-            Items.Add(new SimpleChatItem { Author = Me, Text = "First Message" });
+            Items.Add(new SimpleChatItem { Author = Me, Text = "First Message", DateCreated = DateTime.Now });
 
             for (int i = 0; i < 30; i++)
             {
                 if ((i % 2) == 0)
-                    Items.Add(new SimpleChatItem { Author = Me, Text = $"Message Number : {i.ToString()}" });
+                    Items.Add(new SimpleChatItem { Author = Me, Text = $"Message Number : {i.ToString()}", DateCreated = DateTime.Now.AddDays(i) });
                 else
-                    Items.Add(new SimpleChatItem { Author = Bot, Text = $"Message Number : {i.ToString()}" });
+                    Items.Add(new SimpleChatItem { Author = Bot, Text = $"Message Number : {i.ToString()}", DateCreated = DateTime.Now.AddDays(i) });
 
             }
             Items.Add(new SimpleChatItem { Author = null }); //indicates a time break.
-            Items.Add(new SimpleChatItem { Author = Me, Text = "Last Message" });
+            Items.Add(new SimpleChatItem { Author = Me, Text = "Last Message", DateCreated = DateTime.Now });
         }
 
         private Author me;
