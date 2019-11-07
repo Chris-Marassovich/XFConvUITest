@@ -18,8 +18,16 @@ namespace XFConvUITest.ViewModels
             NewMessageCommand = new Command(NewMessageCommandExecute);
 
             GenData();
+            Items.CollectionChanged += Items_CollectionChanged;
         }
 
+        private void Items_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+            {
+
+            }
+        }
 
         private void GenData()
         {
