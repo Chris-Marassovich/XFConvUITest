@@ -24,7 +24,7 @@ namespace XFConvUITest.ViewModels
         private void GenData()
         {
             Items = new ObservableCollection<SimpleChatItem>();
-            Items.Add(new SimpleChatItem { Author = Me, Text = "First Message", DateCreated = DateTime.Now });
+            Items.Add(new SimpleChatItem { Author = Bot, Text = "First Message with a real lot of text to see how it wraps when very bloody long and soo how on droid it handles this as I suspect I must have different margins per platform.", DateCreated = DateTime.Now });
 
             for (int i = 0; i < 30; i++)
             {
@@ -57,7 +57,7 @@ namespace XFConvUITest.ViewModels
         public ICommand NewMessageCommand { get; set; }
         private void NewMessageCommandExecute(object obj)
         {
-            //Items.Add(new SimpleChatItem { Author = Me, Text = (string)obj });
+            Items.Add(new SimpleChatItem { Author = Me, Text = (string)obj });
         }
     }
 }

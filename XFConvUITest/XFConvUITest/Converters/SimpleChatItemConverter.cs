@@ -33,6 +33,7 @@ namespace XFConvUITest.Converters
         {
             ChatViewModel vm = (ChatViewModel)context.Chat.BindingContext;
             return new SimpleChatItem { Author = vm.Me, Text = (string)message, };
+            //return null;
         }
     }
 }

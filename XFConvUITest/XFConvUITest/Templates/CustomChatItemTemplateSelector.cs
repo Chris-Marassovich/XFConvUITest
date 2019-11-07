@@ -15,7 +15,10 @@ namespace XFConvUITest.Templates
             var myItem = chatItem?.Data as SimpleChatItem;
             if (myItem != null)
             {
-                return this.MeMessageTemplate;
+                if (myItem.Author.Name == "Chris")
+                    return MeMessageTemplate;
+                else
+                    return OtherMessageTemplate;
             }
             return base.OnSelectTemplate(item, container);
         }
