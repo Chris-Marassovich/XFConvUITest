@@ -114,9 +114,9 @@
                                   ItemsSource="{Binding Items}"
                                   ItemConverter="{StaticResource SimpleChatItemConverter}"
                                   ItemTemplateSelector="{StaticResource CustomChatItemTemplateSelector}"
+                                  SendMessageCommand="{Binding NewMessageCommand}"
                                   WidthRequest="1000"
                                   HorizontalOptions="CenterAndExpand"
                                   AutoScrollMode="Automatic"/>
-                                  <!--SendMessageCommand="{Binding NewMessageCommand}"-->
     </ContentPage.Content>
 </ContentPage>

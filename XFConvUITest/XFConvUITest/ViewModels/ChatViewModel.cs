@@ -15,11 +15,13 @@ namespace XFConvUITest.ViewModels
             Me = new Author { Name = "Chris" };
             Bot = new Author { Name = "Botty" };
 
-            NewMessageCommand = new Command(NewMessageCommandExecute);
+            NewMessageCommand = new Command(NewMessageCommandExecute, NewMessageCommandCanExecute);
 
             GenData();
             Items.CollectionChanged += Items_CollectionChanged;
         }
+
+        
 
         private void Items_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
@@ -66,6 +68,10 @@ namespace XFConvUITest.ViewModels
         private void NewMessageCommandExecute(object obj)
         {
             Items.Add(new SimpleChatItem { Author = Me, Text = (string)obj });
+        }
+        private bool NewMessageCommandCanExecute(object arg)
+        {
+            return false;
         }
     }
 }
